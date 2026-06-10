@@ -1,35 +1,35 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class FakultasModel extends CI_Model
-{
-    protected $table = 'fakultas';
-    protected $pk    = 'fakultas_id';
+class FakultasModel extends CI_Model {
 
     public function getAll()
     {
-        return $this->db->get($this->table)->result_array();
+        return $this->db->get('fakultas')->result_array();
     }
 
     public function getById($id)
     {
-        return $this->db->get_where($this->table, [$this->pk => $id])->row_array();
+        return $this->db->get_where('fakultas', [
+            'fakultas_id' => $id
+        ])->row_array();
     }
 
     public function insert($data)
     {
-        return $this->db->insert($this->table, $data);
+        return $this->db->insert('fakultas', $data);
     }
 
     public function update($id, $data)
     {
-        $this->db->where($this->pk, $id);
-        return $this->db->update($this->table, $data);
+        $this->db->where('fakultas_id', $id);
+        return $this->db->update('fakultas', $data);
     }
 
     public function delete($id)
     {
-        $this->db->where($this->pk, $id);
-        return $this->db->delete($this->table);
+        $this->db->where('fakultas_id', $id);
+        return $this->db->delete('fakultas');
     }
+
 }
