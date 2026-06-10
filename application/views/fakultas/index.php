@@ -31,13 +31,9 @@
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
 
-                                <button class="btn btn-danger btn-sm btn-hapus"
-                                    data-id="<?php echo $value['fakultas_id'] ?>"
-                                    data-nama="<?php echo $value['fakultas_name'] ?>"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#modalHapus">
+                                <a class="btn btn-danger btn-sm btn-hapus" href="<?php echo base_url('fakultas/hapus/'.$value['fakultas_id']) ?>">
                                     <i class="bi bi-trash"></i>
-                                </button>
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach ?>
@@ -46,35 +42,3 @@
         </div>
     </div>
 </div>
-
-
-<div class="modal fade" id="modalHapus" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header bg-danger text-white">
-                <h5 class="modal-title"><i class="bi bi-exclamation-triangle me-2"></i>Konfirmasi Hapus</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                Apakah kamu yakin ingin menghapus fakultas <strong id="namaFakultas"></strong>?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <a id="btnKonfirmasiHapus" href="#" class="btn btn-danger">
-                    <i class="bi bi-trash me-1"></i> Hapus
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    document.querySelectorAll('.btn-hapus').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            var id = this.getAttribute('data-id');
-            var nama = this.getAttribute('data-nama');
-            document.getElementById('namaFakultas').textContent = nama;
-            document.getElementById('btnKonfirmasiHapus').href = '<?php echo base_url('fakultas/hapus/') ?>' + id;
-        });
-    });
-</script>
