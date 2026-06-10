@@ -254,18 +254,18 @@ Form dengan field:
 
 ## Checklist Sebelum Selesai
 
-- [Checklist] Tabel `fakultas` dan `prodi` sudah dibuat di database (import `tugas-3.sql`)
-- [Checklist] CRUD Fakultas berfungsi (index, tambah, ubah, hapus)
-- [Checklist] CRUD Program Studi berfungsi (index, tambah, ubah, hapus)
-- [Checklist] Form Program Studi memiliki **select dropdown** untuk memilih Fakultas
-- [Checklist] Form Program Studi memiliki **radio button** untuk memilih Strata
-- [Checklist] Validasi server-side berfungsi di semua form (merah jika salah, hijau jika benar)
-- [Checklist] Isi form lama tetap muncul (repopulate) saat validasi gagal
-- [Checklist] SweetAlert muncul setelah tambah/ubah berhasil (success) dan setelah hapus (warning)
-- [Checklist] SweetAlert konfirmasi muncul sebelum hapus (otomatis dari class `btn-hapus`)
-- [Checklist] Jika data tidak ditemukan → redirect + SweetAlert warning
-- [Checklist] Sidebar menu Fakultas dan Program Studi aktif (bold) sesuai halaman yang dibuka
-- [Checklist] DataTable aktif di halaman index Fakultas dan Program Studi (id `datatable`)
+- [✅] Tabel `fakultas` dan `prodi` sudah dibuat di database (import `tugas-3.sql`)
+- [✅] CRUD Fakultas berfungsi (index, tambah, ubah, hapus)
+- [✅] CRUD Program Studi berfungsi (index, tambah, ubah, hapus)
+- [✅] Form Program Studi memiliki **select dropdown** untuk memilih Fakultas
+- [✅] Form Program Studi memiliki **radio button** untuk memilih Strata
+- [✅] Validasi server-side berfungsi di semua form (merah jika salah, hijau jika benar)
+- [✅] Isi form lama tetap muncul (repopulate) saat validasi gagal
+- [✅] SweetAlert muncul setelah tambah/ubah berhasil (success) dan setelah hapus (warning)
+- [✅] SweetAlert konfirmasi muncul sebelum hapus (otomatis dari class `btn-hapus`)
+- [✅] Jika data tidak ditemukan → redirect + SweetAlert warning
+- [✅] Sidebar menu Fakultas dan Program Studi aktif (bold) sesuai halaman yang dibuka
+- [✅] DataTable aktif di halaman index Fakultas dan Program Studi (id `datatable`)
 
 ---
 
