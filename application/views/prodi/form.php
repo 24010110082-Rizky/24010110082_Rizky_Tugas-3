@@ -25,7 +25,7 @@
                         <input
                             type="number"
                             name="prodi_id"
-                            class="form-control <?php echo form_error('prodi_id') ? 'is-invalid' : ''; ?>"
+                            class="form-control <?php echo form_error('prodi_id') ? 'is-invalid' : (isset($_POST['prodi_id']) ? 'is-valid' : ''); ?>"
                             value="<?php echo set_value('prodi_id', isset($prodi['prodi_id']) ? $prodi['prodi_id'] : ''); ?>"
                             placeholder="Masukkan ID Prodi">
 
@@ -41,7 +41,7 @@
 
                         <select
                             name="fakultas_id"
-                            class="form-select <?php echo form_error('fakultas_id') ? 'is-invalid' : ''; ?>">
+                            class="form-select <?php echo form_error('fakultas_id') ? 'is-invalid' : (isset($_POST['fakultas_id']) ? 'is-valid' : ''); ?>">
 
                             <option value="">-- Pilih Fakultas --</option>
 
@@ -72,7 +72,7 @@
                         <input
                             type="text"
                             name="prodi_name"
-                            class="form-control <?php echo form_error('prodi_name') ? 'is-invalid' : ''; ?>"
+                            class="form-control <?php echo form_error('prodi_name') ? 'is-invalid' : (isset($_POST['prodi_name']) ? 'is-valid' : ''); ?>"
                             value="<?php echo set_value('prodi_name', isset($prodi['prodi_name']) ? $prodi['prodi_name'] : ''); ?>"
                             placeholder="Masukkan Nama Program Studi">
 
@@ -88,7 +88,7 @@
 
                         <div class="form-check form-check-inline">
                             <input
-                                class="form-check-input"
+                                class="form-check-input <?php echo form_error('prodi_strata') ? 'is-invalid' : (isset($_POST['prodi_strata']) ? 'is-valid' : ''); ?>"
                                 type="radio"
                                 name="prodi_strata"
                                 value="D3"
@@ -98,7 +98,7 @@
 
                         <div class="form-check form-check-inline">
                             <input
-                                class="form-check-input"
+                                class="form-check-input <?php echo form_error('prodi_strata') ? 'is-invalid' : (isset($_POST['prodi_strata']) ? 'is-valid' : ''); ?>"
                                 type="radio"
                                 name="prodi_strata"
                                 value="S1"
@@ -108,7 +108,7 @@
 
                         <div class="form-check form-check-inline">
                             <input
-                                class="form-check-input"
+                                class="form-check-input <?php echo form_error('prodi_strata') ? 'is-invalid' : (isset($_POST['prodi_strata']) ? 'is-valid' : ''); ?>"
                                 type="radio"
                                 name="prodi_strata"
                                 value="S2"
