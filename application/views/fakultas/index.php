@@ -47,7 +47,7 @@
     </div>
 </div>
 
-<!-- Modal Konfirmasi Hapus -->
+
 <div class="modal fade" id="modalHapus" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
