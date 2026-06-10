@@ -30,17 +30,17 @@ class MahasiswaModel extends CI_Model {
 	}
 
     public function checkAccount($data)
-    {
-        $this->db->where('mahasiswa_email', $data['email']);
-        $this->db->where('mahasiswa_password', sha1($data['password']));
-        $account = $this->db->get('mahasiswa', 1)->row_array();
+{
+    $this->db->where('mahasiswa_email', $data['email']);
+    $this->db->where('mahasiswa_password', sha1($data['password']));
+    $account = $this->db->get('mahasiswa', 1)->row_array();
 
-        if ($account) {
-            $this->session->set_userdata('user', $account);
-            return true;
-        }
-        else {
-            return false;
-        }
+    if ($account) {
+        $this->session->set_userdata('user', $account);
+        return true;
     }
+    else {
+        return false;
+    }
+}
 }
