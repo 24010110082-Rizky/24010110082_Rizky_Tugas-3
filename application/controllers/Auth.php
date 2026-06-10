@@ -1,15 +1,16 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Auth extends CI_Controller {
-    public function __construct()
+class Auth extends CI_Controller
+{
+	public function __construct()
 	{
 		parent::__construct();
 
 		$this->load->model('MahasiswaModel');
 	}
 
-    public function index()
+	public function index()
 	{
 		// Jika sudah login, redirect ke dashboard
 		if ($this->session->userdata('user')) {
@@ -30,10 +31,11 @@ class Auth extends CI_Controller {
 
 				$status = $this->MahasiswaModel->checkAccount($formulir);
 
-				if ($status) {
+				if ($status === true) {
 					redirect('dashboard');
 				} else {
 					$data['error'] = 'Email atau password salah. Periksa kembali akun anda.';
+					$data['wrong_field'] = $status;
 				}
 			}
 		}
@@ -41,9 +43,9 @@ class Auth extends CI_Controller {
 		$this->load->view('auth/login', $data);
 	}
 
-    public function logout()
-    {
-        $this->session->sess_destroy();
-        redirect('', 'refresh');
-    }
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect('', 'refresh');
+	}
 }

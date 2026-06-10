@@ -1,10 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class MahasiswaModel extends CI_Model {
-    public function getAll()
+class MahasiswaModel extends CI_Model
+{
+	public function getAll()
 	{
-        return $this->db->get('mahasiswa')->result_array();
+		return $this->db->get('mahasiswa')->result_array();
 	}
 
 	public function getById($id)
@@ -29,23 +30,23 @@ class MahasiswaModel extends CI_Model {
 		return $this->db->delete('mahasiswa');
 	}
 
-    public function checkAccount($data)
-{
-    
-    $this->db->where('mahasiswa_email', $data['email']);
-    $account = $this->db->get('mahasiswa', 1)->row_array();
+	public function checkAccount($data)
+	{
 
-    if (!$account) {
-        return 'email_not_found';
-    }
+		$this->db->where('mahasiswa_email', $data['email']);
+		$account = $this->db->get('mahasiswa', 1)->row_array();
 
-    
-    if ($account['mahasiswa_password'] !== sha1($data['password'])) {
-        return 'wrong_password';
-    }
+		if (!$account) {
+			return 'email_not_found';
+		}
 
-    
-    $this->session->set_userdata('user', $account);
-    return true;
-}
+
+		if ($account['mahasiswa_password'] !== sha1($data['password'])) {
+			return 'wrong_password';
+		}
+
+
+		$this->session->set_userdata('user', $account);
+		return true;
+	}
 }
