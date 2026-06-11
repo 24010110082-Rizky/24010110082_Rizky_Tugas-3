@@ -34,7 +34,7 @@ if ($status === true) {
     redirect('dashboard');
 } else {
     $data['error'] = 'Email atau password salah. Periksa kembali akun anda.';
-    $data['wrong_field'] = $status; // 'email_not_found' atau 'wrong_password'
+    $data['wrong_field'] = $status; 
 }
 			}
 		}
